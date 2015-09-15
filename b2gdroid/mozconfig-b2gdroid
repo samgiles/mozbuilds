@@ -1,8 +1,5 @@
 . "$topsrcdir/mobile/android/config/mozconfigs/android-api-11/debug"
 
-# Annoyingly the "64" is dropped by configure on my Mac, I need to figure out
-# why
-ac_add_options --host=x86_64
 
 # Build Firefox for Android:
 ac_add_options --enable-application=mobile/android
