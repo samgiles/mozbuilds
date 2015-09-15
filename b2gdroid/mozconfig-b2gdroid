@@ -1,0 +1,28 @@
+. "$topsrcdir/mobile/android/config/mozconfigs/android-api-11/debug"
+
+# Annoyingly the "64" is dropped by configure on my Mac, I need to figure out
+# why
+ac_add_options --host=x86_64
+
+# Build Firefox for Android:
+ac_add_options --enable-application=mobile/android
+ac_add_options --target=arm-linux-androideabi
+
+# With the following Android SDK and NDK:
+ac_add_options --with-android-sdk="/Users/sam/code/android/sdk/platforms/android-21"
+ac_add_options --with-android-ndk="/Users/sam/code/android/ndk/r10e"
+
+
+ac_add_options --enable-android-apz
+
+ac_add_options --enable-debug
+ac_add_options --enable-debug-symbols
+
+ac_add_options --enable-updater
+
+ac_add_options --disable-crashreporter
+
+mk_add_options MOZ_OBJDIR=/Users/sam/code/mozilla/builds/obj-b2gdroid
+mk_add_options AUTOCLOBBER=1
+mk_add_options MOZ_MAKE_FLAGS="-j8 -s"
+

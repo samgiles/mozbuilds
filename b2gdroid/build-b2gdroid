@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+export GAIADIR=~/code/mozilla/gaia/profile
+export MOZCONFIG=`pwd`/mozconfig-b2gdroid
+export MOZTTDIR=~/code/mozilla/moztt
+CURRENTDIR=`pwd`
+cd $MC
+
+if ! test -d ./gcc/bin; then
+	mkdir -p ./gcc/bin
+	ln -s `which gcc` gcc
+	ln -s `which g++` g++
+fi
+
+./mach configure
+./mach build
