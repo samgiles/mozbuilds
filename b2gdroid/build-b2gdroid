@@ -1,8 +1,13 @@
 #!/usr/bin/env sh
-export GAIADIR=~/code/mozilla/gaia/profile
-export MOZCONFIG=`pwd`/mozconfig-b2gdroid
-export MOZTTDIR=~/code/mozilla/moztt
+
+echo 'Passes arguments through to $MC/mach'
+
 CURRENTDIR=`pwd`
+
+export GAIADIR=~/code/mozilla/gaia
+export MOZCONFIG=$CURRENTDIR/mozconfig-b2gdroid
+export MOZTTDIR=~/code/mozilla/moztt
+
 cd $MC
 
 if ! test -d ./gcc/bin; then
@@ -11,5 +16,6 @@ if ! test -d ./gcc/bin; then
 	ln -s `which g++` g++
 fi
 
-./mach configure
-./mach build
+set -e
+
+$MC/mach $@

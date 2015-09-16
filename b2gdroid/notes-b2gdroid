@@ -1,18 +1,7 @@
 # Prerequisites
 
-- Android NDK (r10e is fine)
-- Android SDK
-	- android-21
-	- Android Support Repository
-	- Android Support Library
-	- Google Play Services
-	- Google Repository
-
 - Mozilla Central (https://hg.mozilla.org/mozilla-central)
+	- `./mach bootstrap` - Select "Firefox for Android"
 - moztt (https://github.com/mozilla-b2g/moztt)
 - gaia  (https://github.com/mozilla-b2g/gaia)
 
-
-# Issues
-
-ProGuard - seem to have issues with lots of "can't find reference" errors.
